@@ -1,0 +1,36 @@
+$main-color: #212121;
+$secondary-color: #636363;
+$font-color: #ffffff;
+$accent-color: #ff8400;
+$title-font-size: 1.5rem;
+
+:root {
+    font-family: 'Bebas Neue', sans-serif;
+    color: $font-color;
+    background-color: $main-color;
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+a:visited {
+    color: $font-color;
+}
+.container{
+    padding: 0 1rem;
+}
+.banner {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/banner-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: $secondary-color;
+  background-blend-mode: multiply;
+  h1 {
+    text-align: center;
+  }
+}
+.section_content h3::before{
+  content: url(./assets/check.svg);
+}
