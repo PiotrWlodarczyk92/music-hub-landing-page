@@ -6,23 +6,48 @@
   scroll-behavior: smooth;
 }
 
-a:visited {
+body {
+  padding-top: 45px;
+}
+
+a, a:visited {
   color: #ffffff;
 }
 
+input {
+  outline: none;
+}
+
 .container {
-  padding: 0 1rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ff8400;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 
 header {
-  width: 100vw;
+  background-color: #212121;
+  width: 100%;
   height: 45px;
-  display: flex;
-  padding-right: 0.5rem;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  box-shadow: 0 10px 30px 10px #000000;
 }
 
 .hamburger-menu {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -48,19 +73,19 @@ header {
   padding-left: 0.5rem;
   background-color: #212121;
   position: absolute;
+  left: 0;
   height: 100vh;
-  width: 80vw;
+  width: 150px;
   z-index: 2;
   translate: -100%;
-}
-
-.options {
-  margin-left: auto;
-  align-self: center;
+  transition: 0.5s;
 }
 
 .hamburger-menu:has(input:checked) + .nav {
   translate: 0;
+  transition: 0.5s ease;
+  opacity: 0.9;
+  backdrop-filter: blur(10px);
 }
 
 .banner {
@@ -75,6 +100,18 @@ header {
   background-blend-mode: multiply;
 }
 .banner h1 {
+  padding: 0 3rem;
+  text-align: center;
+}
+
+.section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section .section_title {
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -82,6 +119,10 @@ header {
   content: url(./assets/check.svg);
   display: inline-block;
   margin-top: auto;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 .section_content img {
@@ -93,6 +134,41 @@ header {
   margin: 1rem 0;
   background-color: #636363;
   border-radius: 0.5rem;
+  max-width: 500px;
+}
+
+.contact-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-form input, .contact-form button {
+  background-color: #636363;
+  border: none;
+  outline: none;
+  padding: 0.25rem;
+}
+.contact-form input:focus, .contact-form button:focus {
+  outline: none;
+  border: none;
+}
+.contact-form button {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  border-radius: 0.25rem;
+}
+.contact-form .section_title {
+  text-align: center;
+}
+@media (max-width: 332px) {
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 footer {
